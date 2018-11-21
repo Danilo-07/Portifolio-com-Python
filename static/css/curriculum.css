@@ -1,0 +1,219 @@
+.container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	min-height: 100%;
+	width: 95%;
+	max-width: 1300px;
+}
+
+.infoCV{
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.secaoCv {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+	font-family: 'Roboto Slab', 'Arial', sans-serif;
+	margin-bottom: .25em;
+	padding-bottom: .25em;
+}
+
+.secaoCv:last-child {
+	background-image: none;
+}
+
+.secaoCv_titulo{
+	font-family: 'Open Sans Condensed', 'Arial', sans-serif;
+	color: #fff;
+	font-size: 25px;
+	text-shadow: 3px 3px 6px black;
+	text-transform: uppercase;
+	padding-bottom: .5em;
+}
+
+.secaoCv_subtitulo{
+	color: #000;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.secaoCv_paragrafo, .secaoCv_lista{
+	padding: 0 .5em;
+	list-style-type: none;
+}
+
+.habilidades-list {
+	font-family: 'Roboto Slab', 'Arial', sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: .5em;
+	text-shadow: 2px 2px 6px #3e3e3e;
+	padding: 0 .5em;
+}
+
+.habilidade {
+	width: 100%;
+}
+
+.circle-on {
+	width: .7em;
+	height: .7em;
+	max-height: auto;
+	background: #58a4da;
+	border: .1em solid #000;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	margin: 5px;
+	box-shadow: 3px 3px 7px #3e3e3e;
+}
+
+.circle-off {
+	width: 0.7em;
+	height: 0.7em;
+	border: .1em solid #000;
+	background: rgba(137, 93, 156, 0.47);
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	margin: 5px;
+	box-shadow: 3px 3px 7px 0px #3e3e3e;
+}
+.infoDadoPessoal {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.infoDadoPessoal_foto{
+	width: 77%;
+	max-width: 270px;
+  border-radius: 50%;
+  padding: 0.5em;
+  border: 3.7px solid #fff;
+	margin: 0.5em auto;
+}
+
+.infoDadoPessoal_titulo {
+	font-family: 'Open Sans Condensed', 'Arial', sans-serif;
+	color: #fff;
+	font-weight: bold;
+	line-height: 1;
+	width: 100%;
+	padding: 0.4em 0;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.infoDadoPessoal_resumo, .infoDadoPessoal_gerais {
+	padding-bottom: .5em;
+	margin: 0 .3em;
+	font-family: 'Roboto Slab', 'Arial', sans-serif;
+}
+
+.dadosGerais {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dadosGerais_item {
+	max-width: 21ch;
+	padding-right: 1ch;
+}
+
+@media not all and (min-width: 1023px) {
+
+	.secao {
+		 flex: 1 1 50%;
+	}
+
+	.infoDadoPessoal_foto{
+		width: 45vmin;
+		border: .3vmax solid #fff;
+	}
+
+	.infoDadoPessoal_titulo {
+		font-size: 2em;
+		margin: 0 auto;
+	}
+
+	.secao:nth-child(1n+3) {
+		flex: 1 1 100%;
+	}
+
+	.infoDadoPessoal {
+		/* height: 300px; */
+		align-items: center;
+	}
+
+	.infoCV {
+		margin-top: 9px;
+	}
+
+	.secaoCv_titulo{
+		text-align: center;
+	}
+}
+
+@media (min-width: 1023px) {
+
+	#secaoContato_bottom {
+		display: none;
+	}
+
+	.btnCopy {
+		display: none;
+	}
+
+	.infoDadoPessoal:last-child {
+		display: none;
+	}
+
+	.infoDadoPessoal {
+		min-width: 300px;
+		max-width: 31%;
+		margin-right: 9px;
+		margin-bottom: 0;
+		flex-direction: column;
+		flex-grow: 3;
+	}
+
+	.infoCV {
+		min-width: 641px;
+		max-width: 66%;
+		flex-grow: 6.5;
+	}
+
+}
+
+.contatoLinks {
+	margin: 0 auto;
+	display: flex;
+	padding-bottom: 1em;
+}
+
+@media (min-width: 450px){
+	.habilidade{
+		width: 15ch;
+	}
+}
+
+.iconeLink{
+	height: 44px;
+	width: 44px;
+	margin: 2px 5px;
+	box-sizing: border-box;
+}
+
+.iconeLink_img:hover, .iconeLink_img:focus {
+	-webkit-filter: drop-shadow( 3px 3px 2px rgba(0,0,0,.7) );
+	filter: drop-shadow( 3px 3px 2px rgba(0,0,0,.7) );
+}

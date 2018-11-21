@@ -1,0 +1,32 @@
+.container{
+  width: 100%;
+  height: 98vh;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.pendente{
+  background-color: rgb(131, 131, 131);
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  color: #000;
+  width: 70vw;
+  min-height: 5vh;
+  padding: 5vmin;
+  margin: 0 auto;
+}
+h1{
+  /* font-size: 2em; */
+
+  font-size: 8vmin;
+
+  text-align: center;
+}
+.prgrf {
+  font-size: 4.5vmin;
+  margin: 0 auto;
+  max-width: 61ch;
+}

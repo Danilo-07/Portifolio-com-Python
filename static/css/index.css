@@ -1,0 +1,43 @@
+.apresentacao{
+  margin: 10vh 2.5vw;
+  text-align: center;
+}
+.apresentacao_titulo {
+	font-size: 3em;
+	font-weight: 800;
+
+  padding-bottom: 3.5vh;
+}
+
+.apresentar_subTitulo {
+  font-size: 2em;
+  padding-bottom: 3.5vh;
+}
+
+.apresentacao_link {
+  color: #3a6c9e;
+}
+
+.is-openWhite {
+  color: #fff;
+  font-family: 'Open Sans';
+}
+
+@media (max-width: 670px) {
+  .apresentacao_titulo {
+  	font-size: 11vw;
+  }
+
+  span{
+    font-size: 12vw;
+  }
+
+  .apresentar_subTitulo {
+    font-size: 6vw;
+  }
+
+	.limiteTexto {
+		width: 22ch;
+		margin: 0 auto;
+	}
+}

@@ -1,0 +1,66 @@
+{% extends "template.html" %}
+
+{% block estilocss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/popup.css')}}">
+{% endblock %}
+
+{% block js %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/mensagem.js') }}"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
+
+{% block conteudo %}
+	<div class="principal">
+		<div class="contato-msg">
+			<h1>Quer entrar em contato?</h1>
+			<p>Preencha o formulário e deixe uma mensagem.<br>Responderei o mais rápido possível. 😃</p>
+		</div>
+
+		<div class="contato-form">
+			<form class="dados-form">
+				<label class="etiqueta" for="nome">Nome completo:</label>
+				<input id="nome" type="text" name="nome"autofocus="" title="O nome precisa ter pelo menos 4 caracteres" placeholder="Seu nome">
+				<p id="nome-ok"></p>
+
+				<label class="etiqueta" for="email">E-mail:</label>
+				<input id="email" type="email" name="email" title="seu@email.com" placeholder="seu@email.com">
+				<p id="email-ok"></p>
+
+				<label class="etiqueta" for="mensagem">Mensagem:</label>
+
+				<textarea id="mensagem" name="mensagem" rows="10" placeholder="Digite aqui sua mensagem"></textarea>
+				<button id="btn-enviar" type="button">Enviar</button>
+
+				<div id='recaptcha' class="g-recaptcha"
+				data-sitekey= {{ site_key }}
+				data-callback="enviarMensagem"
+				data-size="invisible"></div>
+			</form>
+		</div>
+	</div>
+	<span id="sombra" class="oculto" >
+		<div class="popUp">
+
+				<h1 class="popUp_titulo"></h1>
+				<button class="botao" id="fechar-popUp" type="button"><strong>×</strong></button>
+				<p class="popUp_msg"></p>
+				<p class="popUp_msg"></p>
+
+
+		</div>
+	</span>
+	<!-- <span id="sombra" class="oculto" >
+		<div class="popUp">
+			<div id="recado">
+				<h1 class="popUp_titulo"></h1>
+				<p class="popUp_msg"></p>
+				<p class="popUp_msg"></p>
+			</div>
+			<button class="botao" id="fechar-popUp" type="button"><strong>×</strong></button>
+		</div>
+	</span> -->
+{% endblock %}
+
+{% block jsfim %}
+{% endblock %}

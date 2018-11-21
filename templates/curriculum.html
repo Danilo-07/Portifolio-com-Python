@@ -1,0 +1,80 @@
+{% extends "template.html" %}
+
+{% block js %}
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="infoDadoPessoal blocoEscuro">
+
+	<img class="infoDadoPessoal_foto" src="{{ url_for('static', filename='img/foto-pessoal.png')}}" alt="Danilo Moreira Nogueira">
+
+	<h1 class="infoDadoPessoal_titulo">Seu Nome Completo</h1>
+
+	<p class="infoDadoPessoal_resumo"> Seu resumo Profissional. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed placerat purus nec iaculis bibendum. Phasellus varius, lectus nec consequat fermentum, lectus metus finibus urna, ut.
+	</p>
+	<h1 class="infoDadoPessoal_titulo">Contatos</h1>
+	<section class="contatoLinks">
+		<a class="iconeLink" href="tel:+55 Seu Número de Telefone">
+			<img class="iconeLink_img" src="{{ url_for('static', filename='img/telIcon.svg')}}">
+		</a>
+		<a class="iconeLink" href="LINK do seu LinkedIn" target="_blank">
+			<img class="iconeLink_img" src="{{ url_for('static', filename='img/inIcon.svg')}}">
+		</a>
+		<a class="iconeLink" href="LINK so seu GitHub" target="_blank">
+			<img class="iconeLink_img" src="{{ url_for('static', filename='img/gitIcon.svg')}}">
+		</a>
+		<a class="iconeLink" href="LINK do seu Instagran" target="_blank">
+			<img class="iconeLink_img" src="{{ url_for('static', filename='img/instaIcon.svg')}}">
+		</a>
+	</section>
+</div>
+
+<div class="infoCV blocoClaro">
+	<section class="secaoCv">
+		<h1 class="secaoCv_titulo">Formação Acadêmica</h1>
+		<p><strong>Graduação:</strong>Phasellus varius, lectus nec consequat fermentum, lectus metus finibus urna, ut.</p>
+	</section>
+
+	<section class="secaoCv">
+		<h1 class="secaoCv_titulo">Experiência Profissional</h1>
+		<h2 class="secaoCv_subtitulo">EMPRESA 1 – (Mês ANO/Mês Ano)</h2>
+		<p class="secaoCv_paragrafo"><strong>Cargo: Analista </strong></p>
+		<p class="secaoCv_paragrafo">Principais Responsabilidades:</p>
+		<ul>
+			<li class="secaoCv_lista">•	Responsabilidade 01</li>
+			<li class="secaoCv_lista">•	Responsabilidade 02</li>
+			<li class="secaoCv_lista">•	Responsabilidade 03</li>
+		</ul>
+		<br>
+		<p class="secaoCv_paragrafo"><strong>Cargo: Gerente</strong></p>
+		<p class="secaoCv_paragrafo">Principais Responsabilidades:</p>
+		<ul>
+			<li class="secaoCv_lista">•	Responsabilidade 01</li>
+			<li class="secaoCv_lista">•	Responsabilidade 02</li>
+			<li class="secaoCv_lista">•	Responsabilidade 03</li>
+		</ul>
+	</section>
+	<section class="secaoCv">
+		<h1 class="secaoCv_titulo">Habilidades</h1>
+		<ul>
+			<li class="habilidades-list"><div class="habilidade">Habilidade 01: </div><div>10%</div></li>
+			<li class="habilidades-list"><div class="habilidade">Habilidade 02: </div><div>30%</div></li>
+			<li class="habilidades-list"><div class="habilidade">Habilidade 03: </div><div>50%</div></li>
+			<li class="habilidades-list"><div class="habilidade">Habilidade 04: </div><div>70%</div></li>
+			<li class="habilidades-list"><div class="habilidade">Habilidade 05: </div><div>90%</div></li>
+		</ul>
+	</section>
+	<section class="secaoCv">
+		<h1 class="secaoCv_titulo">Informações Adicionais</h1>
+		<p class="secaoCv_paragrafo">•	Informação 01</p>
+		<p class="secaoCv_paragrafo">•	Informação 02</p>
+		<p class="secaoCv_paragrafo">•	Informação 03</p>
+	</section>
+</div>
+{% endblock %}
+
+{% block jsfim %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/habilidades.js') }}"></script>
+{% endblock %}

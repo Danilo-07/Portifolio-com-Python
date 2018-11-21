@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#48acb5">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#48acb5">
+		<title>Danilo Moreira Nogueira</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='img/icone.png')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/site.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename=templatecss)}}">
+
+		{% block estilocss %}
+		{% endblock %}
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,800,900' rel='stylesheet' type='text/css'>
+
+
+	{% block js %}
+		<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/btnmenu.js') }}"></script>
+	{% endblock %}
+
+	</head>
+	<body>
+		<div class="main-container">
+			<header class="menuSuperior">
+				<nav class="menuSuperior_nav">
+					<a href="{{ url_for('index') }}" class="linksMenuSuperior" id="link-index"> SEU NOME</a>
+					<a href="{{ url_for('curriculo') }}" class="linksMenuSuperior menuOculto" id="link-curriculo" >Curriculum Vitae</a>
+					<a href="{{ url_for('projeto') }}" class="linksMenuSuperior menuOculto" id="link-projeto">Projetos</a>
+					<a href="{{ url_for('contato') }}" class="linksMenuSuperior menuOculto" id="link-contato">Contato</a>
+				</nav>
+				<div class="btnMenu" id="toggle">
+					<div class="btnMenu-barra"></div>
+					<div class="btnMenu-barra"></div>
+					<div class="btnMenu-barra"></div>
+				</div>
+			</header>
+			<main class="container">
+				{% block conteudo %}
+				<!-- MAIN -->
+				{% endblock %}
+			</main>
+			<footer class="rodape">© SEU NOME 2018 <span class="autor"> - Desenvolvido por <a href="https://github.com/Danilo-07" target="_blank">Danilo Moreira</a> </span> </footer>
+		</div>
+
+		{% block jsfim %}
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/btnmenu.js') }}"></script>
+		{% endblock %}
+	</body>
+
+</html>

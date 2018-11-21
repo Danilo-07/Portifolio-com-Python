@@ -1,0 +1,124 @@
+.principal {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.contato-msg {
+	background-color: #5c7695;
+	flex: auto;
+  padding: 1em;
+	margin-bottom: 9px;
+}
+
+.contato-msg h1 {
+	font-family: 'Open Sans Condensed', 'Arial', sans-serif;
+	font-weight: bold;
+	font-size: 2.5em;
+	text-transform: uppercase;
+	color: #fff;
+	text-shadow: 2px 2px 3px black;
+	text-align: center;
+}
+
+.contato-msg p {
+	text-align: justify;
+  font-family: 'Roboto Slab', serif;
+	color: #fff;
+}
+
+.contato-form {
+  background-color: #cad7e5;
+  flex: auto;
+	padding: 1em;
+}
+
+.dados-form {
+	display: flex;
+	flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+    color: #000;
+}
+
+.etiqueta {
+    padding: .3em 0;
+    font-size: 1em;
+}
+
+#btn-enviar {
+  font-family: "Open Sans Condensed", "Arial", sans-serif;
+  text-shadow: 2px 2px 3px black;
+  font-size: 1.2em;
+  margin-right: auto;
+  margin-top: 1em;
+  height: 2.3em;
+  width: 4.5em;
+}
+
+.enviando {
+    background: url('../img/ldng.gif') no-repeat top center;
+    background-color: rgba(0,0,0,0.16);
+    background-size: contain;
+    text-shadow: none !important;
+    color: transparent;
+    border: 1px solid black;
+    box-shadow: none !important;
+}
+
+input {
+	height: 2.2em;
+}
+
+input, textarea {
+	font-family: 'Roboto Slab', 'Arial', sans-serif;
+    font-size: .8em;
+    color: #000;
+    padding: .25em .5em;
+    box-sizing: border-box;
+    border: 0;
+    background: rgba(0,0,0,0.16);
+    border-radius: 0.3em;
+	outline: none;
+}
+
+#nome-ok, #email-ok {
+    background-color: lightgreen;
+    margin: .5em 0;
+    text-align: center;
+    border-radius: .3em;
+    font-size: .8em;
+    font-weight: bold;
+}
+
+#nome-erro, #email-erro {
+    background-color: pink;
+    margin: .5em 0;
+    text-align: center;
+    border-radius: .3em;
+    font-size: .8em;
+}
+
+.grecaptcha-badge {
+    z-index:2 !important;
+    bottom: 2.7em !important;
+}
+
+@media (min-width: 1260px) {
+
+	.contato-msg {
+		max-width: 450px;
+		margin-right: 9px;
+		margin-bottom: 0;
+	}
+
+	.contato-form {
+		max-width: 650px;
+	}
+
+	.principal {
+		flex-direction: row;
+	}
+
+}
