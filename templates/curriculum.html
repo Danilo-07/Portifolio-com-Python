@@ -15,16 +15,16 @@
 	</p>
 	<h1 class="infoDadoPessoal_titulo">Contatos</h1>
 	<section class="contatoLinks">
-		<a class="iconeLink" href="tel:+55 Seu Número de Telefone">
+		<a class="iconeLink" href="tel:{{phone_number}}">
 			<img class="iconeLink_img" src="{{ url_for('static', filename='img/telIcon.svg')}}">
 		</a>
-		<a class="iconeLink" href="LINK do seu LinkedIn" target="_blank">
+		<a class="iconeLink" href="{{linkedin_link}}" target="_blank">
 			<img class="iconeLink_img" src="{{ url_for('static', filename='img/inIcon.svg')}}">
 		</a>
-		<a class="iconeLink" href="LINK so seu GitHub" target="_blank">
+		<a class="iconeLink" href="{{github_link}}" target="_blank">
 			<img class="iconeLink_img" src="{{ url_for('static', filename='img/gitIcon.svg')}}">
 		</a>
-		<a class="iconeLink" href="LINK do seu Instagran" target="_blank">
+		<a class="iconeLink" href="{{instagram_link}}" target="_blank">
 			<img class="iconeLink_img" src="{{ url_for('static', filename='img/instaIcon.svg')}}">
 		</a>
 	</section>
@@ -32,37 +32,34 @@
 
 <div class="infoCV blocoClaro">
 	<section class="secaoCv">
-		<h1 class="secaoCv_titulo">Formação Acadêmica</h1>
-		<p><strong>Graduação:</strong>Phasellus varius, lectus nec consequat fermentum, lectus metus finibus urna, ut.</p>
+		<h1 class="secaoCv_titulo">EDUCATION</h1>
+        {% for education in education_list %}
+        <p class="secaoCv_paragrafo"><strong>{{education.get('name', '')}}</strong></p>
+        <p class="secaoCv_paragrafo"> <i>{{education.get('institution', '')}}</i> </p>
+        <p class="secaoCv_paragrafo"><i>{{education.get('graduation_year', '')}} - {{education.get('location', '')}}</i></p>
+        <p class="secaoCv_paragrafo">{{education.get('extra_information', '')}}</p>
+		{%endfor%}
 	</section>
 
 	<section class="secaoCv">
-		<h1 class="secaoCv_titulo">Experiência Profissional</h1>
-		<h2 class="secaoCv_subtitulo">EMPRESA 1 – (Mês ANO/Mês Ano)</h2>
-		<p class="secaoCv_paragrafo"><strong>Cargo: Analista </strong></p>
-		<p class="secaoCv_paragrafo">Principais Responsabilidades:</p>
-		<ul>
-			<li class="secaoCv_lista">•	Responsabilidade 01</li>
-			<li class="secaoCv_lista">•	Responsabilidade 02</li>
-			<li class="secaoCv_lista">•	Responsabilidade 03</li>
-		</ul>
-		<br>
-		<p class="secaoCv_paragrafo"><strong>Cargo: Gerente</strong></p>
-		<p class="secaoCv_paragrafo">Principais Responsabilidades:</p>
-		<ul>
-			<li class="secaoCv_lista">•	Responsabilidade 01</li>
-			<li class="secaoCv_lista">•	Responsabilidade 02</li>
-			<li class="secaoCv_lista">•	Responsabilidade 03</li>
-		</ul>
+		<h1 class="secaoCv_titulo">PROFESSIONAL EXPIRIENCE</h1>
+        {% for experience in experiences_list %}
+		<h2 class="secaoCv_subtitulo">{{experience.get('name', '')}}</h2>
+        <p class="secaoCv_paragrafo"><strong>{{experience.get('company', '')}} - {{experience.get('location', '')}}</strong></p>
+        <p class="secaoCv_paragrafo"><strong>{{experience.get('working_period', '')}}</strong></p>
+		<p class="secaoCv_paragrafo">{{experience.get('job_description', '')}}</p>
+        <br>
+		{%endfor%}
 	</section>
 	<section class="secaoCv">
-		<h1 class="secaoCv_titulo">Habilidades</h1>
+		<h1 class="secaoCv_titulo">SKILLS</h1>
 		<ul>
-			<li class="habilidades-list"><div class="habilidade">Habilidade 01: </div><div>10%</div></li>
-			<li class="habilidades-list"><div class="habilidade">Habilidade 02: </div><div>30%</div></li>
-			<li class="habilidades-list"><div class="habilidade">Habilidade 03: </div><div>50%</div></li>
-			<li class="habilidades-list"><div class="habilidade">Habilidade 04: </div><div>70%</div></li>
-			<li class="habilidades-list"><div class="habilidade">Habilidade 05: </div><div>90%</div></li>
+            {% for skill in skills_list %}
+			<li class="habilidades-list">
+                <div class="habilidade">{{skill.get('name', '')}} </div>
+                <div>{{skill.get('strength', '')}}</div>
+            </li>
+            {%endfor%}
 		</ul>
 	</section>
 	<section class="secaoCv">

@@ -1,38 +1,39 @@
+from utils.utils import create_email_message, recaptcha_validation, name_and_email_validation
+from utils.settings import PERSONAL_NAME, SITE_KEY, APP_SECRET_KEY, SKILLS, EXPERINCES, EDUCATION
 from flask import Flask, render_template, request, url_for
 import conexao_email
-import mensagem_texto
-import validacao
-import leitorjson
-import configs_site as cfs
 
 app = Flask(__name__)
-app.secret_key = '65#9DMN_T'
+app.secret_key = APP_SECRET_KEY
 
 
 # rota para apresentar a página inicial
 @app.route('/')
 def index():
     return render_template('index.html', templatecss='css/index.css',
-                           nome=cfs.nome_pessoal)
+                           name=PERSONAL_NAME)
 
 
 # rota para apresentar a página com o curriculum
 @app.route('/curriculum')
 def curriculo():
-    return render_template('curriculum.html', templatecss='css/curriculum.css')
+    return render_template('curriculum.html', templatecss='css/curriculum.css',
+                           name=PERSONAL_NAME, skills_list=SKILLS, experiences_list=EXPERINCES,
+                           education_list=EDUCATION)
 
 
 # rota para apresentar a página com o portifólio
 @app.route('/projetos')
 def projeto():
-    return render_template('projetos.html', templatecss='css/projetos.css')
+    return render_template('projetos.html', templatecss='css/projetos.css',
+                           name=PERSONAL_NAME)
 
 
 # rota para apresentar a página com o formulário de contato
 @app.route('/contato')
 def contato():
     return render_template('contato.html', templatecss='css/contato.css',
-                           site_key=cfs.site_key)
+                           site_key=SITE_KEY, name=PERSONAL_NAME)
 
 
 # rota para receber mensagem enviada na rota /contato
@@ -44,13 +45,13 @@ def enviar_mensagem():
     texto = request.form['mensagem']
     respReCaptcha = request.form['g-recaptcha-response']
 
-    nome_email_ok = validacao.validar_nome_email(nome, email)
+    nome_email_ok = name_and_email_validation(nome, email)
     if (nome_email_ok):
 
-        recaptcha_ok = validacao.validar_recaptcha(respReCaptcha)
+        recaptcha_ok = recaptcha_validation(respReCaptcha)
         if (recaptcha_ok):
 
-            msg_texto = mensagem_texto.criar_mensagem(nome, email, texto)
+            msg_texto = create_email_message(nome, email, texto)
             if conexao_email.enviar_email(app, msg_texto, nome):
                 return ('', 200)
             else:

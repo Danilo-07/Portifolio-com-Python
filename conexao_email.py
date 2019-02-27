@@ -1,7 +1,7 @@
 from flask_mail import Mail, Message
 from smtplib import SMTPException, SMTPServerDisconnected
 from smtplib import SMTPAuthenticationError
-import configs_site as cfs
+from utils.settings import EMAIL, PASSWORD, RECEIVER_EMAIL
 
 
 # iniciar conexão
@@ -11,8 +11,8 @@ def enviar_email(app, msg_texto, nome):
     app.config['MAIL_PORT'] = 465
     app.config['MAIL_USE_TLS'] = False
     app.config['MAIL_USE_SSL'] = True
-    app.config['MAIL_USERNAME'] = cfs.email
-    app.config['MAIL_PASSWORD'] = cfs.senha
+    app.config['MAIL_USERNAME'] = EMAIL
+    app.config['MAIL_PASSWORD'] = PASSWORD
 
     # criando o objeto email
     mail = Mail(app)
@@ -20,8 +20,8 @@ def enviar_email(app, msg_texto, nome):
     assunto = 'Mensagem de SitePessoal - O {} enviou uma mensagem'.format(nome)
 
     # criando a mensagem
-    msg = Message(assunto, sender=cfs.email, recipients=[
-        cfs.destino])
+    msg = Message(assunto, sender=EMAIL, recipients=[
+        RECEIVER_EMAIL])
     msg.body = msg_texto
 
     # emviando a mensagem
