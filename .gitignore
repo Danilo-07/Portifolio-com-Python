@@ -3,5 +3,4 @@ __pycache__/
 
 # Environments
 .env
-.venv
-Pipfile
+pythonenv/
